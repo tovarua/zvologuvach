@@ -247,78 +247,149 @@ src="https://www.facebook.com/tr?id=405106695644750&ev=PageView&noscript=1"
     
     <section class="b5">
         <h2 class="title"> <span>Відгуки покупців</span></h2>
-        <style>
-            /* Стилі для контейнера слайдера */
-            .testimonial-slider {
-                width: 500px; /* Ширина слайдера */
-                overflow: hidden; /* Ховати зайвий контент, який виходить за межі слайдера */
+         <style>
+            .slider {
+                width: 80%;
+                margin: auto;
+                overflow: hidden;
+                position: relative;
             }
         
-            /* Стилі для слайдів */
-            .testimonial-slide {
-                display: none; /* Початково ховає всі слайди */
+            .slides {
+                display: flex;
+                transition: all 0.5s ease;
             }
         
-            /* Перший слайд буде видимий, інші будуть заховані */
-            .testimonial-slide:first-child {
+            .slide {
+                width: 100%;
+                position: relative; /* Додано позицію для вирівнювання кнопок */
+            }
+        
+            .testimonial {
+                display: none;
+                text-align: center;
+                border: 2px solid black; /* Додана обводка */
+                padding: 20px; /* Доданий відступ */
+                color: black; /* Колір тексту відгуку */
+                background-color: white; /* Доданий білий фон */
+            }
+        
+            .testimonial.active {
                 display: block;
             }
         
-            /* Кнопки навігації */
+            .rating {
+                color: gold;
+            }
+        
+            /* Додано стилі для імені та прізвища */
+            .testimonial p:first-child {
+                font-weight: bold;
+                font-size: 24px; /* Змінено розмір шрифту */
+                margin-bottom: 10px; /* Доданий відступ */
+            }
+        
+            /* Додано стилі для кнопок перемикання вперед/назад */
             .prev, .next {
+                position: absolute;
+                bottom: 0;
+                background-color: rgba(255, 255, 255, 0.5); /* Прозорий білий колір */
+                border: none;
+                color: black;
+                font-size: 20px;
+                padding: 10px;
                 cursor: pointer;
-                padding: 5px;
-                background-color: #f2f2f2;
-                border: 1px solid #ccc;
+            }
+        
+            .prev {
+                left: 0;
+            }
+        
+            .next {
+                right: 0;
             }
         </style>
-        </head>
-        <body>
         
-      
         
-        <!-- Слайдер відгуків -->
-        <div class="testimonial-slider">
-            <div class="testimonial-slide" style="color: rgba(247, 0, 0, 0.812)">
-                <h3>Ангеліна Пашина
-                    15.04.2024</h3>
-                <p> Дуже гарний зволожувач за невеликі кошти, класно виконує свої функції.</p>
+        
+        <div class="slider">
+            <div class="slides">
+                <div class="slide" style="display: block;">
+                    <div class="testimonial active">
+                        <p class="rating">⭐️⭐️⭐️⭐️⭐️</p>
+                        <p><strong>АНГЕЛІНА ПАШИНА 15.04.2024</strong></p>
+                        <p>Дуже гарний зволожувач за невеликі кошти, класно виконує свої функції.</p>
+                    </div>
+                </div>
+                <div class="slide" style="display: none;">
+                    <div class="testimonial">
+                        <p class="rating">⭐️⭐️⭐️⭐️⭐️</p>
+                        <p><strong>МИКОЛАЙ 14.04.2024</strong></p>
+                        <p>Дитина задоволена, гарно підсвічується та дійсно відлякує комарів, купували в минулому році на цьому сайті, хочу
+                            замовити зараз ще один.</p>
+                    </div>
+                </div>
+                <div class="slide" style="display: none;">
+                    <div class="testimonial">
+                        <p class="rating">⭐️⭐️⭐️⭐️⭐️</p>
+                        <p><strong>МАРІЯ КОЛОМІЄЦЬ 13.04.2024</strong></p>
+                        <p>Замовляли на подарунок - залишились дуже задоволені. Рекомендую продавця, гарне обслуговування та швидка
+                            доставка.</p>
+                        
+                    </div>
+                </div>
+                <div class="slide" style="display: none;">
+                    <div class="testimonial">
+                        <p class="rating">⭐️⭐️⭐️⭐️⭐️</p>
+                        <p><strong>ОКСАНА ЗАВГОРОДНЯ 13.04.2024</strong></p>
+                        <p>Дуже стильний та якісний зволожувач!
+                            Вікна квартири виходять на дорогу в центрі міста, тому багато пилу, а з цим зволожувачем стало набагато легше дихати!!
+                            Щиро рекомендую усім!</p>
+                        
+                    </div>
+                </div>
+                
+                
             </div>
-            <div class="testimonial-slide"style="color: rgba(247, 0, 0, 0.812)">
-                <h3>Миколай
-                    14.04.2024 </h3>
-                <p>Дитина задоволена, гарно підсвічується та дійсно відлякує комарів, купували в минулому році на цьому сайті, хочу <br>замовити зараз ще один.</p>
-            </div>
-            <div class="testimonial-slide" style="color: rgba(247, 0, 0, 0.812)" text-align: center;> 
-                <h3>Марія Коломієць
-                    13.04.2024</h3>
-                <p>Замовляли на подарунок - залишились дуже задоволені. Рекомендую продавця, гарне обслуговування та швидка <br> доставка.</p>
-            </div>
-            <div class="testimonial-slide" style="color: rgba(247, 0, 0, 0.812)">
-                <h3>Оксана Завгородня
-                    13.04.2024</h3>
-                <p>Дуже стильний та якісний зволожувач!<br> Вікна квартири виходять на дорогу в центрі міста, тому багато пилу, а з цим зволожувачем стало набагато легше дихати!! <br>  Щиро  рекомендую усім!</p>
-            </div>
-            <!-- Додайте інші відгуки, які вам потрібні -->
+            <button class="prev" onclick="prevSlide()">❮</button>
+            <button class="next" onclick="nextSlide()">❯</button>
         </div>
-          <!-- Кнопки навігації -->
-          <div class="prev" onclick="changeSlide(-1)">❮ Минулий відгук</div>
-          <div class="next" onclick="changeSlide(1)">Наступний відгук ❯</div>
-        
+    
         <script>
-            var slideIndex = 0;
+            let slideIndex = 0;
+            showSlides();
         
-            function changeSlide(n) {
-                var slides = document.getElementsByClassName("testimonial-slide");
-                slideIndex += n;
-                if (slideIndex >= slides.length) { slideIndex = 0; }
-                if (slideIndex < 0) { slideIndex = slides.length - 1; }
-                for (var i = 0; i < slides.length; i++) {
-                    slides[i].style.display = "none";  
+            function showSlides() {
+                const slides = document.querySelectorAll('.slide');
+                const testimonials = document.querySelectorAll('.testimonial');
+        
+                for (let i = 0; i < slides.length; i++) {
+                    slides[i].style.display = 'none';
+                    testimonials[i].classList.remove('active');
                 }
-                slides[slideIndex].style.display = "block";  
+        
+                if (slideIndex >= slides.length) {
+                    slideIndex = 0;
+                } else if (slideIndex < 0) {
+                    slideIndex = slides.length - 1;
+                }
+        
+                slides[slideIndex].style.display = 'block';
+                testimonials[slideIndex].classList.add('active');
+            }
+        
+            function prevSlide() {
+                slideIndex--;
+                showSlides();
+            }
+        
+            function nextSlide() {
+                slideIndex++;
+                showSlides();
             }
         </script>
+        
+        </section>
         
     
 
